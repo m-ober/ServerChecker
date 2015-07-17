@@ -1,0 +1,529 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ServerCheckerGUI.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM "&Log",                        ID_VIEW_LOG
+    END
+    POPUP "Pingbooster"
+    BEGIN
+        MENUITEM "Change value...",             ID_PINGBOOSTER_CHANGEVALUE
+        MENUITEM "Run",                         ID_PINGBOOSTER_RUN
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ServerCheckerGUI...",  ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 318, 142
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_BORDER | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,12,20,20
+    LTEXT           "ServerChecker Version 3.02",IDC_STATIC,39,12,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2005 H!GHGuY",IDC_STATIC,39,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,261,7,50,16,WS_GROUP
+    LTEXT           "If you appreciate my work, then please donate to our community\r\nPaypal and NoChex: hutch@tarnok.org",
+                    IDC_STATIC,39,39,257,21
+    GROUPBOX        "Support: ",IDC_STATIC,39,60,216,49
+    LTEXT           "BugTracker: www.dumbclan.co.uk/TTT\r\nForum: www.dumbclan.co.uk/forum\r\nIRC: #dumber on Quakenet network\r\nE-mail: HIGHGuY@dumbclan.com",
+                    IDC_STATIC,46,69,131,34
+    LTEXT           "This software is published under GPL license.\r\nhttp://www.gnu.org/licenses/gpl.html",
+                    IDC_STATIC,39,115,257,20
+END
+
+IDD_SERVERVIEW DIALOGEX 0, 0, 371, 114
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_SERVERLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,
+                    7,357,74
+    PUSHBUTTON      "New",IDC_NEW,7,89,53,18
+    PUSHBUTTON      "Delete",IDC_DELETE,75,89,60,18
+    PUSHBUTTON      "Start",IDC_START,236,89,60,18
+    PUSHBUTTON      "Stop",IDC_STOP,311,89,53,18
+END
+
+IDD_DETAILVIEW DIALOGEX 0, 0, 280, 206
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Server Details",IDC_STATIC,8,7,265,163
+    LTEXT           "Name:",IDC_STATIC,14,20,56,13
+    EDITTEXT        IDC_NAME,70,20,90,12,ES_AUTOHSCROLL
+    LTEXT           "Server IP:",IDC_STATIC,14,39,56,13
+    EDITTEXT        IDC_IP,70,39,90,13,ES_AUTOHSCROLL
+    LTEXT           "Port:",IDC_STATIC,170,39,46,13
+    EDITTEXT        IDC_PORT,216,39,50,13,ES_AUTOHSCROLL
+    LTEXT           "Game type:",IDC_STATIC,14,58,56,13
+    COMBOBOX        IDC_TYPE,70,58,90,54,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Executable:",IDC_STATIC,14,77,56,12
+    EDITTEXT        IDC_EXECUTABLE,70,77,196,12,ES_AUTOHSCROLL
+    LTEXT           "Timeout:",IDC_STATIC,14,95,56,12
+    EDITTEXT        IDC_TIMEOUT,70,95,50,12,ES_AUTOHSCROLL
+    LTEXT           "Pause:",IDC_STATIC,14,113,56,12
+    EDITTEXT        IDC_PAUSE,70,113,50,12,ES_AUTOHSCROLL
+    LTEXT           "Startup time:",IDC_STATIC,170,95,46,12
+    EDITTEXT        IDC_STARTUP,216,95,50,12,ES_AUTOHSCROLL
+    LTEXT           "Priority:",IDC_STATIC,170,113,46,12
+    COMBOBOX        IDC_COMBO1,216,113,50,50,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Update",IDC_UPDATE,215,177,51,15
+    CONTROL         "Time Control",IDC_TIMECONTROL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,132,106,12
+    CONTROL         "",IDC_STARTTIME,"SysDateTimePick32",DTS_RIGHTALIGN | 
+                    DTS_UPDOWN | WS_DISABLED | WS_TABSTOP | 0x8,70,151,50,13
+    LTEXT           "Start time:",IDC_STATIC,14,151,56,13
+    LTEXT           "Stop time:",IDC_STATIC,170,151,46,13
+    CONTROL         "",IDC_STOPTIME,"SysDateTimePick32",DTS_RIGHTALIGN | 
+                    DTS_UPDOWN | WS_DISABLED | WS_TABSTOP | 0x8,216,151,50,
+                    13
+END
+
+IDD_NEWSERVER DIALOGEX 0, 0, 403, 65
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "New Server"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Name:",IDC_STATIC,7,7,40,12
+    EDITTEXT        IDC_NAME,55,7,137,12,ES_AUTOHSCROLL
+    LTEXT           "Server IP:",IDC_STATIC,7,24,40,12
+    EDITTEXT        IDC_IP,55,24,81,12,ES_AUTOHSCROLL
+    LTEXT           "Port:",IDC_STATIC,140,24,18,12
+    EDITTEXT        IDC_PORT,163,24,29,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Game Type:",IDC_STATIC,198,24,39,12
+    COMBOBOX        IDC_COMBO1,245,24,79,40,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Executable:",IDC_STATIC,7,41,40,12
+    EDITTEXT        IDC_EXEC,55,41,218,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse...",IDC_BROWSE,273,41,51,12
+    DEFPUSHBUTTON   "OK",IDOK,334,7,62,14
+    PUSHBUTTON      "Cancel",IDCANCEL,334,24,62,14
+END
+
+IDD_PINGBOOSTER DIALOGEX 0, 0, 167, 46
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Windows Multimedia Timer"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,110,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,110,24,50,14
+    EDITTEXT        IDC_EDIT1,53,10,27,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Timer Value:",IDC_STATIC,7,10,41,10
+    LTEXT           "msec",IDC_STATIC,86,10,20,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,0,1,0
+ PRODUCTVERSION 3,0,1,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "DumB & Dumber Gaming Community"
+            VALUE "FileDescription", "ServerChecker"
+            VALUE "FileVersion", "3.01"
+            VALUE "InternalName", "ServerChecker.exe"
+            VALUE "LegalCopyright", "(c) H!GHGuY.  All rights reserved."
+            VALUE "OriginalFilename", "ServerChecker.exe"
+            VALUE "ProductName", "ServerChecker"
+            VALUE "ProductVersion", "3.0.1.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 311
+        VERTGUIDE, 11
+        VERTGUIDE, 39
+        VERTGUIDE, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+        HORZGUIDE, 12
+        HORZGUIDE, 20
+        HORZGUIDE, 25
+        HORZGUIDE, 32
+        HORZGUIDE, 39
+        HORZGUIDE, 60
+        HORZGUIDE, 103
+        HORZGUIDE, 109
+        HORZGUIDE, 115
+    END
+
+    IDD_SERVERVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 364
+        VERTGUIDE, 60
+        VERTGUIDE, 75
+        VERTGUIDE, 135
+        VERTGUIDE, 236
+        VERTGUIDE, 296
+        VERTGUIDE, 311
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+        HORZGUIDE, 81
+        HORZGUIDE, 89
+    END
+
+    IDD_DETAILVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 273
+        VERTGUIDE, 14
+        VERTGUIDE, 70
+        VERTGUIDE, 120
+        VERTGUIDE, 160
+        VERTGUIDE, 170
+        VERTGUIDE, 216
+        VERTGUIDE, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+        HORZGUIDE, 20
+        HORZGUIDE, 33
+        HORZGUIDE, 39
+        HORZGUIDE, 52
+        HORZGUIDE, 58
+        HORZGUIDE, 71
+        HORZGUIDE, 77
+        HORZGUIDE, 89
+        HORZGUIDE, 95
+        HORZGUIDE, 107
+        HORZGUIDE, 113
+        HORZGUIDE, 125
+        HORZGUIDE, 132
+        HORZGUIDE, 144
+        HORZGUIDE, 151
+        HORZGUIDE, 164
+        HORZGUIDE, 170
+        HORZGUIDE, 177
+        HORZGUIDE, 192
+    END
+
+    IDD_NEWSERVER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 396
+        VERTGUIDE, 47
+        VERTGUIDE, 55
+        VERTGUIDE, 136
+        VERTGUIDE, 140
+        VERTGUIDE, 158
+        VERTGUIDE, 163
+        VERTGUIDE, 192
+        VERTGUIDE, 198
+        VERTGUIDE, 237
+        VERTGUIDE, 245
+        VERTGUIDE, 273
+        VERTGUIDE, 324
+        VERTGUIDE, 334
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 58
+        HORZGUIDE, 19
+        HORZGUIDE, 24
+        HORZGUIDE, 36
+        HORZGUIDE, 41
+        HORZGUIDE, 53
+    END
+
+    IDD_PINGBOOSTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        VERTGUIDE, 48
+        VERTGUIDE, 53
+        VERTGUIDE, 80
+        VERTGUIDE, 86
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+        HORZGUIDE, 10
+        HORZGUIDE, 22
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "ServerChecker\n\nServerChecker\n\n\nServerChecker.Document\nServerChecker.Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ServerChecker v3.01"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_LOG             "Show Logfile"
+    ID_PINGBOOSTER_CHANGEVALUE "Change the Pingbooster value"
+    ID_PINGBOOSTER_RUN      "Turn pingboosting On or Off"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Dutch (Belgium) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NLB)
+#ifdef _WIN32
+LANGUAGE LANG_DUTCH, SUBLANG_DUTCH_BELGIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FRAMEOWNER DIALOGEX 0, 0, 68, 49
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_FRAMEOWNER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 61
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\ServerCheckerGUI.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Dutch (Belgium) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\ServerCheckerGUI.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
