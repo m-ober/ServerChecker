@@ -1,5 +1,22 @@
 # ServerChecker
 
+A simple, yet very useful tool to manage one or many gameservers in
+one place. For supported servers/protocols, ServerChecker
+directly communicates with the server and will restart it upon
+a failure - even if the process is still running.
+
+The original author of this software seems to have abandoned it,
+as there was no update for quite some time and now even
+the webpage is no longer reachable.
+
+## Build
+
+For Visual Studio 2013, the Multibyte MFC Library is required:
+
+https://www.microsoft.com/download/details.aspx?id=40770
+
+## License
+
 ServerChecker will keep supported servers up and running
 Copyright (C) 2005  [DumB]H!GHGuY
 
