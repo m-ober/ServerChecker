@@ -65,7 +65,6 @@ public:
 	int getSelectedServerNumber(void);
 	void addServer(ServerControl* server);
 	int runningServers(void);
-	void checkRegistry();
 	void startAllServers(void);
 	void boost(bool on);
 	bool boosts();

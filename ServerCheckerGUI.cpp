@@ -109,11 +109,6 @@ BOOL CServerCheckerGUIApp::InitInstance()
 
 	CString cmdLine(m_lpCmdLine);
 	bool showDialog = (cmdLine.MakeLower().Find("/startup") == -1);
-	if (showDialog) // regular startup
-	{
-		CAboutDlg dlg;
-		dlg.DoModal();
-	}
 	
 	// Dispatch commands specified on the command line.  Will return FALSE if
 	// app was launched with /RegServer, /Register, /Unregserver or /Unregister.
