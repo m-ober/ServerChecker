@@ -24,6 +24,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 #pragma once
 #include "mainframeowner.h"
+#include "CCustomSplitterWnd.h"
+
 class CMainFrame : public CFrameWnd
 {
 	
@@ -33,7 +35,7 @@ protected: // create from serialization only
 
 // Attributes
 protected:
-	CSplitterWnd m_wndSplitter;
+	CCustomSplitterWnd m_wndSplitter;
 public:
 	
 // Operations

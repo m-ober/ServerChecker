@@ -149,6 +149,12 @@ BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
     cs.hwndParent = m_MainFrameOwner.GetSafeHwnd();
 	cs.dwExStyle = WS_EX_APPWINDOW; // otherwise no taskbar button @ untill minimized and restored
 
+	// fixed window size
+	cs.dwExStyle &= ~WS_EX_CLIENTEDGE;
+	cs.style &= (0xFFFFFFFF ^ WS_SIZEBOX);
+	cs.style |= WS_BORDER;
+	cs.style &= (0xFFFFFFFF ^ WS_MAXIMIZEBOX);
+
 	return TRUE;
 }
 

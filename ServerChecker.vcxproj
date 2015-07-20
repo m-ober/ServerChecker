@@ -77,6 +77,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Control.cpp" />
+    <ClCompile Include="CCustomSplitterWnd.cpp" />
     <ClCompile Include="DetailView.cpp" />
     <ClCompile Include="MainFrameOwner.cpp" />
     <ClCompile Include="MainFrm.cpp" />
@@ -94,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Control.h" />
+    <ClInclude Include="CCustomSplitterWnd.h" />
     <ClInclude Include="DetailView.h" />
     <ClInclude Include="MainFrameOwner.h" />
     <ClInclude Include="MainFrm.h" />
