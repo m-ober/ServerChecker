@@ -36,6 +36,10 @@ For more information on this topic, see:
 
 https://technet.microsoft.com/en-us/library/cc754364.aspx
 
+### Screenshot
+
+![ServerChecker](https://raw.githubusercontent.com/m-ober/ServerChecker/docs/serverchecker.png "ServerChecker")
+
 ## License
 
 ServerChecker will keep supported servers up and running
