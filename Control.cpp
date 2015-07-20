@@ -210,6 +210,7 @@ void ServerControl::createProcess()
 		processhandle = procinfo.hProcess;
 		threadhandle = procinfo.hThread;
 		processid = procinfo.dwProcessId;
+
 		int t = (int)(time_startup*2.0/3000); // 2/3d of the time "just" waiting
 		for (int i = 0; *go && i<t; i++)
 		{ // waiting behaviour updated to allow stopping while starting up
@@ -223,6 +224,11 @@ void ServerControl::createProcess()
                 res = WaitForInputIdle(processhandle,1000);
 			}
 		}
+
+		// added: processor affinity
+		// moved here. 
+		this->SetAffinityMask((DWORD)1); // bind to proc 1
+		this->SetAffinityMask(0); // unbind
 	}
 	else
 	{
@@ -415,7 +421,7 @@ DWORD ServerControl::GetAffinityMask(void)
 void ServerControl::SetAffinityMask(DWORD mask)
 {
 	DWORD sysaffinity = GetSystemAffinityMask();
-	affinity = (mask ? (mask & sysaffinity) : sysaffinity);
+	affinity = (mask & sysaffinity ? (mask & sysaffinity) : sysaffinity);
 	if (processhandle)
 		SetProcessAffinityMask(processhandle,affinity);
 }
