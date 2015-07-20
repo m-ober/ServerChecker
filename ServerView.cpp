@@ -152,13 +152,13 @@ void CServerView::OnInitialUpdate()
 {
 	CFormView::OnInitialUpdate();
 	
-	m_ServerList.InsertColumn(SI_NR ,"NR",LVCFMT_LEFT,4*CHAR_WIDTH,SI_NR);
+	m_ServerList.InsertColumn(SI_NR ,"Nr",LVCFMT_LEFT,5*CHAR_WIDTH,SI_NR);
 	m_ServerList.InsertColumn(SI_NAME ,"Name",LVCFMT_LEFT,12*CHAR_WIDTH,SI_NAME);
 	m_ServerList.InsertColumn(SI_PID ,"PID",LVCFMT_LEFT,4*CHAR_WIDTH,SI_PID);
 	m_ServerList.InsertColumn(SI_IP,"IP",LVCFMT_LEFT,10*CHAR_WIDTH,SI_IP);
 	m_ServerList.InsertColumn(SI_PORT,"Port",LVCFMT_LEFT,5*CHAR_WIDTH,SI_PORT);
-	m_ServerList.InsertColumn(SI_UP,"UP",LVCFMT_LEFT,6*CHAR_WIDTH,SI_UP);
-	m_ServerList.InsertColumn(SI_STATUS,"STATUS",LVCFMT_LEFT,12*CHAR_WIDTH,SI_STATUS);
+	m_ServerList.InsertColumn(SI_UP,"Up",LVCFMT_LEFT,6*CHAR_WIDTH,SI_UP);
+	m_ServerList.InsertColumn(SI_STATUS,"Status",LVCFMT_LEFT,11*CHAR_WIDTH,SI_STATUS);
 
 
 	CServerDoc* doc = (CServerDoc*)GetDocument();

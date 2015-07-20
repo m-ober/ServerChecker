@@ -111,14 +111,14 @@ BOOL CMainFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/,
 	BOOL res = m_wndSplitter.CreateStatic(this,2,1);
 	if (!res)
 		return FALSE;
-	res = m_wndSplitter.CreateView(0,0,RUNTIME_CLASS(CServerView),CSize(450,185),pContext);
+	res = m_wndSplitter.CreateView(0,0,RUNTIME_CLASS(CServerView),CSize(450,245),pContext);
 	if (!res)
 		return FALSE;
-	m_wndSplitter.CreateView(1,0,RUNTIME_CLASS(CDetailView),CSize(450,180),pContext);
+	m_wndSplitter.CreateView(1,0,RUNTIME_CLASS(CDetailView),CSize(450,240),pContext);
 	if (!res)
 		return FALSE;
-	m_wndSplitter.SetRowInfo(0,185,0);
-	m_wndSplitter.SetRowInfo(1,180,0);
+	m_wndSplitter.SetRowInfo(0,245,0);
+	m_wndSplitter.SetRowInfo(1,240,0);
 	m_wndSplitter.RecalcLayout();
 	return res;
 

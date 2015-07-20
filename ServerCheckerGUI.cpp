@@ -116,7 +116,7 @@ BOOL CServerCheckerGUIApp::InitInstance()
 		return FALSE;
 	// The one and only window has been initialized, so show and update it
 
-	m_pMainWnd->MoveWindow(50,50,580,610);
+	m_pMainWnd->MoveWindow(50,50,580,650);
 	m_pMainWnd->ShowWindow(SW_SHOW);
 	m_pMainWnd->UpdateWindow();
 
