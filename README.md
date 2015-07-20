@@ -11,9 +11,30 @@ the webpage is no longer reachable.
 
 ## Build
 
-For Visual Studio 2013, the Multibyte MFC Library is required:
+For Visual Studio 2013 (and above), the Multibyte MFC Library is required:
 
 https://www.microsoft.com/download/details.aspx?id=40770
+
+## Usage
+
+This version should be running fine on Windows XP and above (used by myself on 
+Windows Server 2008 R2).
+
+For the most part, the software should be self-explanatory. If ServerChecker
+keeps restarting a process over and over, while the server should be running fine,
+it may be the case that the protocol is outdated and thus ServerChecker
+cannot successfully communicate with the server, which will then trigger a restart.
+If this happens, choose "Normal Program". This will only restart the server
+if the process crashes/exits.
+
+Note that Windows Error Reporting and everything else that may require user
+interaction should be disabled, otherwise ServerChecker may not recognize that
+a process crashed, because it still seems to be running (but actually Windows
+wants you to choose whether you want to send an error report or not).
+
+For more information on this topic, see:
+
+https://technet.microsoft.com/en-us/library/cc754364.aspx
 
 ## License
 
