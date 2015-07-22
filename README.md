@@ -36,6 +36,12 @@ For more information on this topic, see:
 
 https://technet.microsoft.com/en-us/library/cc754364.aspx
 
+### Download
+
+Pre-built binaries can be found here:
+
+https://github.com/m-ober/ServerChecker/releases
+
 ### Screenshot
 
 ![ServerChecker](https://raw.githubusercontent.com/m-ober/ServerChecker/docs/serverchecker.png "ServerChecker")
