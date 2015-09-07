@@ -5,9 +5,15 @@ one place. For supported servers/protocols, ServerChecker
 directly communicates with the server and will restart it upon
 a failure - even if the process is still running.
 
-The original author of this software seems to have abandoned it,
+~~The original author of this software seems to have abandoned it,
 as there was no update for quite some time and now even
-the webpage is no longer reachable.
+the webpage is no longer reachable.~~
+
+The author of this software notified me of a complete rewrite of this software, see:
+
+https://github.com/H1GHGuY/ServerCheckerV4
+
+It contains a lot of new features, like remote control and running as as service, all of which is not supported by this version.
 
 ## Build
 
